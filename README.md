@@ -17,14 +17,13 @@ For more details check -  http://www.kali.org/how-to/emergency-self-destruction-
 
 Update: As of July 2019, Kali Linux no longer ships this cryptsetup patch, instead we introduced a cryptsetup-nuke-password package that provides a similar feature without modifying cryptsetup.
 
-root@kali:~# apt install cryptsetup-nuke-password
-+
-root@kali:~# dpkg-reconfigure cryptsetup-nuke-password
+root@kali: apt install cryptsetup-nuke-password
+root@kali: dpkg-reconfigure cryptsetup-nuke-password
 
 Instructions copied from Kali's form:
 
 Let’s go through the motions of encrypting, backing up, destroying, and then restoring your data using Kali Linux. Start by downloading and installing Kali Linux 1.0.6 with Full Disk Encryption. Once that is done, you can verify your information as follows:
-
+```
 root@kali-crypto:~# cryptsetup luksDump /dev/sda5
 LUKS header information for /dev/sda5
 
@@ -53,4 +52,6 @@ Key Slot 4: DISABLED
 Key Slot 5: DISABLED
 Key Slot 6: DISABLED
 Key Slot 7: DISABLED 
-"
+```
+
+As you can see, we have slot 0 enabled with slots 1 to 7 unused. At this point, we will add our nuke key.
