@@ -18,4 +18,5 @@ For more details check -  http://www.kali.org/how-to/emergency-self-destruction-
 Update: As of July 2019, Kali Linux no longer ships this cryptsetup patch, instead we introduced a cryptsetup-nuke-password package that provides a similar feature without modifying cryptsetup.
 
 root@kali:~# apt install cryptsetup-nuke-password
+
 root@kali:~# dpkg-reconfigure cryptsetup-nuke-password
